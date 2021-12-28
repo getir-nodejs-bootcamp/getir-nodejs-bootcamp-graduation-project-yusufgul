@@ -40,9 +40,6 @@ con.on("open", function () {
 //main route
 app.use("/", swaggerUI.serve, swaggerUI.setup(specs), getirRouter);
 
-//route for swagger
-//app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
-
 //Error handler for unhandled routes
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
